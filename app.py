@@ -2,15 +2,15 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def home():
     return render_template("index.html")
 
-@app.route('/generic')
+@app.route("/generic")
 def generic():
     return render_template("generic.html")
 
-@app.route('/elements')
+@app.route("/elements")
 def elements():
     return render_template("elements.html")
 
