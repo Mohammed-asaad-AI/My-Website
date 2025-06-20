@@ -1,2 +1,2 @@
-# Optional requirements file (only if using Python backend)
-# e.g., Flask
+
+Flask==2.3.3
