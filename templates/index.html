@@ -7,6 +7,7 @@
     * {
       font-family: 'Orbitron', sans-serif;
     }
+
     .cyber-btn {
       background-color: #0ff;
       color: #000;
@@ -18,11 +19,13 @@
       box-shadow: 0 0 10px #0ff, 0 0 20px #0ff inset;
       transition: 0.3s ease;
     }
+
     .cyber-btn:hover {
       background-color: #000;
       color: #0ff;
       box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
     }
+
     .project-img {
       width: 100%;
       max-width: 400px;
@@ -30,6 +33,7 @@
       border-radius: 10px;
       box-shadow: 0 0 20px #0ff;
     }
+
     .profile-img {
       width: 150px;
       height: 150px;
@@ -160,7 +164,7 @@
   </header>
 
   <section class="hero" id="about">
-    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile" class="profile-img" />
+    <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="Profile" class="profile-img" />
     <h2>Junior AI & Cloud Engineer</h2>
     <p>Passionate about solving real-world problems with technology and data. Skilled in Python, machine learning, and
       modern web solutions.</p>
@@ -170,17 +174,17 @@
     <h2>My Projects</h2>
     <div class="projects">
       <div class="project-card">
-        <img src="{{ url_for('static', filename='images/pic01.jpg') }}" alt="Google Clone">
+        <img src="{{ url_for('static', filename='assets/images/pic01.jpg') }}" alt="Google Clone">
         <h3>Google Homepage Clone</h3>
         <p>A front-end replica of Google's homepage using HTML and CSS for UI/UX training.</p>
       </div>
       <div class="project-card">
-        <img src="{{ url_for('static', filename='images/pic02.png') }}" alt="KMeans Clustering">
+        <img src="{{ url_for('static', filename='assets/images/pic02.png') }}" alt="KMeans Clustering">
         <h3>KMeans Clustering</h3>
         <p>Manual KMeans algorithm applied on Titanic dataset. Includes visualization and analysis.</p>
       </div>
       <div class="project-card">
-        <img src="{{ url_for('static', filename='images/pic03.jpg') }}" alt="Breast Cancer Prediction">
+        <img src="{{ url_for('static', filename='assets/images/pic03.jpg') }}" alt="Breast Cancer Prediction">
         <h3>Breast Cancer Detection</h3>
         <p>ML model using Scikit-learn to predict breast cancer from clinical dataset.</p>
       </div>
