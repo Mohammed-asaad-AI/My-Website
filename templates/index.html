@@ -2,155 +2,151 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohammed Asaad - Portfolio</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Asaad | Data Scientist Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(135deg, #a0f0e0, #d4fef7);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
     }
 
-    .btn-custom {
-      background-color: #00bfa6;
-      color: white;
-      border: none;
-      transition: all 0.3s ease-in-out;
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
     }
 
-    .btn-custom:hover {
-      background-color: #009d8a;
-      transform: scale(1.05);
+    nav ul {
+      list-style: none;
+      display: flex;
+      padding: 1rem;
+      gap: 2rem;
+      margin: 0;
     }
 
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 5px solid #00bfa6;
-      object-fit: cover;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      transition: transform 0.4s;
-    }
-
-    .profile-pic:hover {
-      transform: rotate(1deg) scale(1.05);
-    }
-
-    .section-heading {
-      font-size: 2.2rem;
+    nav ul li a {
+      color: #00ffff;
+      text-decoration: none;
       font-weight: bold;
-      color: #00796b;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+
+    header {
+      text-align: center;
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #00ffff;
+    }
+
+    .profile-img {
+      border: 4px solid #00ffff;
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      margin-bottom: 20px;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #00ffff;
+      border-bottom: 2px solid #00ffff;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #00ffff;
+      color: #0f2027;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #888;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 
 <body>
-  <div class="container py-5 text-center">
-    <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="Mohammed Asaad" class="profile-pic mb-4" data-aos="zoom-in">
-    <h1 class="display-5 fw-bold" data-aos="fade-up">Mohammed Asaad</h1>
-    <p class="lead" data-aos="fade-up" data-aos-delay="100">Machine Learning & Cloud Engineer | Passionate about Data</p>
-    <a href="#projects" class="btn btn-custom mt-3" data-aos="fade-up" data-aos-delay="200">See My Work</a>
-  </div>
 
-  <div class="container py-5" id="about" data-aos="fade-up">
-    <h2 class="section-heading mb-4">About Me</h2>
-    <p>Hello! I'm Mohammed Asaad, a data-driven engineer with a deep passion for artificial intelligence and cloud solutions. I enjoy building intelligent systems that solve real-world problems and transforming raw data into meaningful insights.</p>
-  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <div class="container py-5" id="skills" data-aos="fade-up">
-    <h2 class="section-heading mb-4">Skills</h2>
-    <div class="row text-start">
-      <div class="col-md-6">
-        <h5>Technical</h5>
-        <ul>
-          <li>Python, Pandas, Scikit-learn</li>
-          <li>Machine Learning, Deep Learning</li>
-          <li>SQL, Git, REST APIs</li>
-          <li>Cloud: Azure, GCP (basics)</li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <h5>Soft Skills</h5>
-        <ul>
-          <li>Critical Thinking</li>
-          <li>Team Collaboration</li>
-          <li>Problem Solving</li>
-          <li>Continuous Learning</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <header>
+    <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="Profile" class="profile-img" />
+    <h1>Mohammed Asaad</h1>
+    <p>Data Scientist & Machine Learning Engineer</p>
+  </header>
 
-  <div class="container py-5" id="projects">
-    <h2 class="section-heading mb-4" data-aos="fade-up">Projects</h2>
-    <div class="row">
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card">
-          <img src="{{ url_for('static', filename='assets/images/pic01.jpg') }}" class="card-img-top" alt="Project 1">
-          <div class="card-body">
-            <h5 class="card-title">Google Stock Prediction</h5>
-            <p class="card-text">Forecasting stock prices using ML models including SVM, Linear Regression, and Random Forest.</p>
-            <a href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-" class="btn btn-custom">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card">
-          <img src="{{ url_for('static', filename='assets/images/pic02.png') }}" class="card-img-top" alt="Project 2">
-          <div class="card-body">
-            <h5 class="card-title">KMeans Clustering</h5>
-            <p class="card-text">Clustering Titanic dataset manually and using sklearn. Visualized and evaluated with metrics.</p>
-            <a href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project" class="btn btn-custom">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card">
-          <img src="{{ url_for('static', filename='assets/images/pic03.jpg') }}" class="card-img-top" alt="Project 3">
-          <div class="card-body">
-            <h5 class="card-title">Breast Cancer Diagnosis</h5>
-            <p class="card-text">Compared manual and sklearn KNN models on breast cancer dataset for accuracy and clarity.</p>
-            <a href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison" class="btn btn-custom">View</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Passionate about turning data into actionable insights. Skilled in Machine Learning, Cloud (Azure), and Python
+      development. Seeking opportunities to build intelligent, scalable solutions.
+    </p>
+  </section>
 
-  <div class="container py-5" id="contact" data-aos="fade-up">
-    <h2 class="section-heading mb-4">Contact</h2>
-    <form method="POST" action="{{ url_for('send_email') }}">
-      <div class="mb-3">
-        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-      </div>
-      <div class="mb-3">
-        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-      </div>
-      <div class="mb-3">
-        <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-custom">Send Message</button>
-    </form>
-  </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><a class="btn" href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-" target="_blank">Google Stock Predicting</a></li>
+      <li><a class="btn" href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project" target="_blank">KMeans Clustering</a></li>
+      <li><a class="btn" href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison" target="_blank">Breast Cancer Diagnosis (KNN)</a></li>
+    </ul>
+  </section>
 
-  <!-- Footer -->
-  <footer class="text-center py-4">
-    <p>© Mohammed Asaad | <a href="mailto:mo.asaad999@gmail.com">mo.asaad999@gmail.com</a></p>
-    <p><a href="https://github.com/Mohammed-asaad-AI">GitHub</a> | <a href="https://www.linkedin.com/in/mohammed-asaad99/">LinkedIn</a></p>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:mo.asaad999@gmail.com" style="color: #00ffff;">mo.asaad999@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/mohammed-asaad99/" target="_blank" style="color: #00ffff;">linkedin.com/in/mohammed-asaad99</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mohammed Asaad. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 
 </html>
