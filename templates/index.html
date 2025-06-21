@@ -250,3 +250,41 @@
 </body>
 
 </html>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const alertBox = document.querySelector(".alert");
+		if (alertBox) {
+			alertBox.style.display = "block";
+			setTimeout(() => {
+				alertBox.style.opacity = "1";
+			}, 100);
+			setTimeout(() => {
+				alertBox.style.opacity = "0";
+				setTimeout(() => {
+					alertBox.remove();
+				}, 1000);
+			}, 4000); // تغلق بعد 4 ثواني
+		}
+	});
+</script>
+<style>
+.alert {
+	display: none;
+	position: fixed;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #28a745; /* لون أخضر */
+	color: white;
+	padding: 15px 30px;
+	border-radius: 10px;
+	font-size: 18px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	z-index: 9999;
+}
+.alert.danger {
+	background-color: #dc3545; /* أحمر */
+}
+</style>
