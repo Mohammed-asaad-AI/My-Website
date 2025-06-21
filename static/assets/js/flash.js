@@ -1,4 +1,3 @@
-// Custom Flash Message Logic
 document.addEventListener("DOMContentLoaded", function () {
 	const flash = document.querySelector(".custom-flash");
 	if (flash) {
