@@ -1,145 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mohammed Asaad | Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(135deg, #081c24, #003f5c);
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
-        }
-        nav {
-            background-color: rgba(0, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #00c9a7, #005f73);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 4rem;
-            animation: fadeInDown 1s ease forwards;
-        }
-        .hero p {
-            font-size: 1.5rem;
-            animation: fadeInUp 1.2s ease forwards;
-        }
-        .section-title {
-            text-align: center;
-            margin-top: 80px;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            color: #0ef;
-        }
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-        .project-card:hover {
-            transform: scale(1.05);
-            background-color: rgba(0, 255, 255, 0.05);
-        }
-        .project-img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        footer {
-            background: rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            color: #ccc;
-        }
-        @keyframes fadeInDown {
-            0% { opacity: 0; transform: translateY(-40px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(40px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammed Asaad - Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      background-color: #091921;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    nav a.nav-link {
+      color: #00ffff !important;
+      font-weight: bold;
+    }
+
+    header {
+      padding: 5rem 1rem;
+      text-align: center;
+      background-color: transparent;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #a0cfd6;
+    }
+
+    .project {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 24px rgba(0, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.02);
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: #091921;
+      text-align: center;
+      padding: 1.5rem;
+      color: #a0cfd6;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Mohammed Asaad</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            </ul>
-        </div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Mohammed Asaad</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
 
-<div class="hero" id="home">
-    <img src="static/profile.jpg" alt="Profile" class="rounded-circle mb-4" width="150" height="150">
-    <h1>Hi, I'm Mohammed Asaad</h1>
-    <p>AI & Data Science Enthusiast | Problem Solver | Portfolio Builder</p>
-</div>
-
-<section id="about" class="container">
-    <h2 class="section-title">About Me</h2>
-    <p class="text-center">I'm a data and AI engineer with a passion for transforming data into actionable insights. I specialize in machine learning, data visualization, and full-stack experimentation. I thrive on solving real-world problems using modern technology.</p>
-</section>
-
-<section id="projects" class="container">
-    <h2 class="section-title">Projects</h2>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="project-card">
-                <img src="static/pic02.png" class="project-img" alt="KMeans Clustering">
-                <h4 class="mt-3">KMeans Clustering</h4>
-                <p>Manual implementation of KMeans on Titanic dataset with data preprocessing, visualization, and performance evaluation.</p>
-                <a href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project" target="_blank" class="btn btn-outline-info btn-sm mt-2">View Code</a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="project-card">
-                <img src="static/pic03.jpg" class="project-img" alt="Breast Cancer Analysis">
-                <h4 class="mt-3">Breast Cancer KNN</h4>
-                <p>Comparison between KNN and Decision Tree in diagnosing breast cancer. Includes data scaling and model tuning.</p>
-                <a href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison" target="_blank" class="btn btn-outline-info btn-sm mt-2">View Code</a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="project-card">
-                <img src="static/pic01.jpg" class="project-img" alt="Google Stock Prediction">
-                <h4 class="mt-3">Google Stock Prediction</h4>
-                <p>Time series forecasting of Google stock prices using LSTM deep learning model with TensorFlow and Keras.</p>
-                <a href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-" target="_blank" class="btn btn-outline-info btn-sm mt-2">View Code</a>
-            </div>
-        </div>
+  <!-- Header -->
+  <header class="text-white">
+    <div class="container">
+      <h1>Welcome to My Portfolio</h1>
+      <p>AI & Data Science Projects | Powered by Flask</p>
     </div>
-</section>
+  </header>
 
-<section id="contact" class="container text-center mt-5">
-    <h2 class="section-title">Contact</h2>
-    <p>Feel free to reach out via email or connect with me on LinkedIn.</p>
-    <p>Email: <a href="mailto:mo.asaad999@gmail.com">mo.asaad999@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/mohammed-asaad99/" target="_blank">Mohammed Asaad</a></p>
-</section>
+  <!-- About Section -->
+  <section id="about" class="container py-5">
+    <h2 class="text-center mb-4">About Me</h2>
+    <p class="text-center">I’m Mohammed Asaad, a passionate AI and data science engineer with experience in clustering, prediction models, and real-world data analysis. This portfolio showcases my selected projects with interactive and modern design.</p>
+  </section>
 
-<footer>
-    <p>&copy; 2025 Mohammed Asaad. All rights reserved.</p>
-</footer>
+  <!-- Projects Section -->
+  <section id="projects" class="container py-5">
+    <h2 class="text-center mb-5">My Projects</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="project">
+          <img src="{{ url_for('static', filename='images/pic02.png') }}" alt="KMeans Project">
+          <h4>KMeans Clustering</h4>
+          <p>Manual implementation and visualization of clustering using Titanic dataset.</p>
+          <a href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project" class="btn btn-outline-info btn-sm" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project">
+          <img src="{{ url_for('static', filename='images/pic03.jpg') }}" alt="Breast Cancer KNN">
+          <h4>Breast Cancer Diagnosis</h4>
+          <p>Comparison of KNN and other models for breast cancer prediction using medical datasets.</p>
+          <a href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison" class="btn btn-outline-info btn-sm" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project">
+          <img src="{{ url_for('static', filename='images/pic01.jpg') }}" alt="Google Stock Prediction">
+          <h4>Google Stock Forecast</h4>
+          <p>Time-series forecasting of Google stock prices using regression models and visual trends.</p>
+          <a href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-" class="btn btn-outline-info btn-sm" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Contact -->
+  <section id="contact" class="container py-5">
+    <h2 class="text-center mb-4">Contact Me</h2>
+    <p class="text-center">Feel free to reach out via email: <strong>mo.asaad999@gmail.com</strong></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Mohammed Asaad. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
