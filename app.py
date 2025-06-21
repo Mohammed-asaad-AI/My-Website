@@ -8,8 +8,8 @@ app.secret_key = "your-secret-key"
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USERNAME"] = "your.email@gmail.com"  # بريد المرسل
-app.config["MAIL_PASSWORD"] = "jlmw ndle hdac hdep"  # App Password من Google
+app.config["MAIL_USERNAME"] = "hammaasaad@gmail.com"  # بريد المرسل
+app.config["MAIL_PASSWORD"] = "bpfu uldm rozb yxhb"  # App Password من Google
 
 mail = Mail(app)
 
