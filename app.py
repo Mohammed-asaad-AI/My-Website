@@ -42,7 +42,7 @@ def send_email():
     msg = Message(
         subject=f"New message from {name}",
         sender=app.config["MAIL_USERNAME"],
-        recipients=["mo.asaad999@gmail.com"],  # وجهة الرسالة (أنت)
+        recipients=["mo.asaad999@gmail.com"],
         body=f"From: {name} <{email}>\n\nMessage:\n{message}",
     )
 
@@ -50,9 +50,11 @@ def send_email():
         mail.send(msg)
         flash("✅ Message sent successfully!", "success")
     except Exception as e:
+        print("❌ Email send failed:", e)  # ← هذا مهم جداً لكشف الخطأ
         flash(f"❌ An error occurred: {str(e)}", "danger")
 
     return redirect("/")
+
 
 
 if __name__ == "__main__":
