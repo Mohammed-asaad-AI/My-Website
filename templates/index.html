@@ -16,38 +16,38 @@
 		<link href="{{ url_for('static', filename='assets/css/noscript.css') }}" rel="stylesheet" />
 	</noscript>
 	<style>
-	.custom-flash {
-		display: none;
-		position: fixed;
-		top: 30px;
-		left: 50%;
-		transform: translateX(-50%);
-		min-width: 320px;
-		max-width: 600px;
-		padding: 25px 35px;
-		border-radius: 16px;
-		font-size: 18px;
-		font-weight: 600;
-		color: #ffffff;
-		background: rgba(19, 179, 179, 0.25);
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-		z-index: 9999;
-		opacity: 0;
-		transition: opacity 0.5s ease;
-		text-align: center;
-		line-height: 1.5;
-	}
+		.custom-flash {
+			display: none;
+			position: fixed;
+			top: 30px;
+			left: 50%;
+			transform: translateX(-50%);
+			min-width: 320px;
+			max-width: 600px;
+			padding: 25px 35px;
+			border-radius: 16px;
+			font-size: 18px;
+			font-weight: 600;
+			color: #ffffff;
+			background: rgba(19, 179, 179, 0.25);
+			backdrop-filter: blur(12px);
+			-webkit-backdrop-filter: blur(12px);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+			z-index: 9999;
+			opacity: 0;
+			transition: opacity 0.5s ease;
+			text-align: center;
+			line-height: 1.5;
+		}
 
-	.custom-flash.success {
-		background: rgba(19, 214, 198, 0.25);
-	}
+		.custom-flash.success {
+			background: rgba(19, 214, 198, 0.25);
+		}
 
-	.custom-flash.danger {
-		background: rgba(220, 53, 69, 0.25);
-	}
-</style>
+		.custom-flash.danger {
+			background: rgba(220, 53, 69, 0.25);
+		}
+	</style>
 
 
 </head>
@@ -84,8 +84,8 @@
 		<nav id="nav">
 			<ul class="links">
 				<li class="active"><a href="{{ url_for('home') }}">About Me</a></li>
-                <li><a href="{{ url_for('generic') }}">Generic Page</a></li>
-                <li><a href="{{ url_for('elements') }}">Elements Reference</a></li>
+				<li><a href="{{ url_for('generic') }}">Generic Page</a></li>
+				<li><a href="{{ url_for('elements') }}">Elements Reference</a></li>
 
 			</ul>
 			<ul class="icons">
