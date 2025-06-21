@@ -4860,28 +4860,6 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	}
 
 }
-#flash-message {
-    position: fixed;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
-}
-
-.custom-flash {
-    background: #2ecc71; /* أخضر مريح */
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    animation: slideDownFadeOut 5s forwards;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-.custom-flash.danger {
-    background: #e74c3c; /* أحمر */
-}
 
 @keyframes slideDownFadeOut {
     0% {
