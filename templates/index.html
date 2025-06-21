@@ -15,6 +15,28 @@
 	<noscript>
 		<link href="{{ url_for('static', filename='assets/css/noscript.css') }}" rel="stylesheet" />
 	</noscript>
+	<style>
+.alert {
+	display: none;
+	position: fixed;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #13b3b3; /* لون أخضر */
+	color: white;
+	padding: 30px 30px;
+	border-radius: 10px;
+	font-size: 18px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	z-index: 9999;
+}
+.alert.danger {
+	background-color: #dc3545; /* أحمر */
+}
+</style>
+
 </head>
 
 <body class="is-preload">{% with messages = get_flashed_messages(with_categories=true) %}
@@ -247,9 +269,8 @@
 	<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
 	<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
 	<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
-</body>
 
-</html>
+	
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
 		const alertBox = document.querySelector(".alert");
@@ -267,24 +288,7 @@
 		}
 	});
 </script>
-<style>
-.alert {
-	display: none;
-	position: fixed;
-	top: 30px;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: #13b3b3; /* لون أخضر */
-	color: white;
-	padding: 30px 30px;
-	border-radius: 10px;
-	font-size: 18px;
-	box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-	opacity: 0;
-	transition: opacity 0.5s ease;
-	z-index: 9999;
-}
-.alert.danger {
-	background-color: #dc3545; /* أحمر */
-}
-</style>
+
+</body>
+
+</html>
