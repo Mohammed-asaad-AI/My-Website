@@ -6,123 +6,113 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Mohammed Asaad Portifolio</title>
-		<meta charset="utf-8" />
-		<meta content="width=device-width, initial-scale=1, user-scalable=no"
-			name="viewport" />
-		<link href="{{ url_for('static', filename='assets/css/main.css') }}"
-			rel="stylesheet" />
-		<noscript><link
-				href="{{ url_for('static', filename='assets/css/noscript.css') }}"
-				rel="stylesheet" /></noscript>
-	</head>
-	<body class="is-preload">
-		{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    {% for category, message in messages %}
-      <div class="alert {{ category }}">{{ message }}</div>
-    {% endfor %}
-  {% endif %}
-{% endwith %}
 
-		<!-- Wrapper -->
-		<div class="fade-in" id="wrapper">
-			<!-- Intro -->
-			<div id="intro">
-				<h1>Mohammed Asaad<br />
-					The Data Scientist </h1>
-				<p> Machine Learning &amp; Cloud Engineer loves to Turn Data into Business
-					Insights <br /></p>
-				<ul class="actions">
-					<li><a class="button icon solid solo fa-arrow-down scrolly"
-							href="#header">Continue</a></li>
+<head>
+	<title>Mohammed Asaad Portifolio</title>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
+	<link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet" />
+	<noscript>
+		<link href="{{ url_for('static', filename='assets/css/noscript.css') }}" rel="stylesheet" />
+	</noscript>
+</head>
+
+<body class="is-preload">{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	<div id="flash-message">
+		{% for category, message in messages %}
+		<div class="custom-flash {{ category }}">{{ message }}</div>
+		{% endfor %}
+	</div>
+	{% endif %}
+	{% endwith %}
+
+
+	<!-- Wrapper -->
+	<div class="fade-in" id="wrapper">
+		<!-- Intro -->
+		<div id="intro">
+			<h1>Mohammed Asaad<br />
+				The Data Scientist </h1>
+			<p> Machine Learning &amp; Cloud Engineer loves to Turn Data into Business
+				Insights <br /></p>
+			<ul class="actions">
+				<li><a class="button icon solid solo fa-arrow-down scrolly" href="#header">Continue</a></li>
+			</ul>
+		</div>
+		<!-- Header -->
+		<header id="header">
+			<a class="logo" href="{{ url_for('home') }}">Mohammed Asaad</a>
+		</header>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li class="active"><a href="{{ url_for('home') }}">About Me</a></li>
+			</ul>
+			<ul class="icons">
+				<li><a class="icon brands fa-linkedin" href="https://www.linkedin.com/in/mohammed-asaad99/"><span
+							class="label">linkedin</span></a></li>
+				<li><a class="icon brands fa-github" href="https://github.com/Mohammed-asaad-AI"><span
+							class="label">GitHub</span></a></li>
+			</ul>
+		</nav>
+		<!-- Main -->
+		<div id="main">
+			<!-- Featured Post -->
+			<article class="post featured">
+				<header class="major">
+					<h2><a href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-">Google
+							Stocks<br />
+							Predicting </a></h2>
+					<p>In this project I try to forecast Google stock prices using SVM, <br />
+						Linear Regression, and Random Forest models.<br />
+						Includes feature engineering and model performance visualization.</p>
+				</header>
+				<a class="image main" href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-"><img
+						alt="Google Stock Predicting"
+						src="{{ url_for('static', filename='assets/images/pic01.jpg') }}" /></a>
+				<ul class="actions special">
+					<li><a class="button large"
+							href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-">Full
+							Story</a></li>
 				</ul>
-			</div>
-			<!-- Header -->
-			<header id="header">
-				<a class="logo" href="{{ url_for('home') }}">Mohammed Asaad</a>
-			</header>
-			<!-- Nav -->
-			<nav id="nav">
-				<ul class="links">
-					<li class="active"><a href="{{ url_for('home') }}">About Me</a></li>
-				</ul>
-				<ul class="icons">
-					<li><a class="icon brands fa-linkedin"
-							href="https://www.linkedin.com/in/mohammed-asaad99/"><span
-								class="label">linkedin</span></a></li>
-					<li><a class="icon brands fa-github"
-							href="https://github.com/Mohammed-asaad-AI"><span
-								class="label">GitHub</span></a></li>
-				</ul>
-			</nav>
-			<!-- Main -->
-			<div id="main">
-				<!-- Featured Post -->
-				<article class="post featured">
-					<header class="major">
-						<h2><a
-								href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-">Google
-								Stocks<br />
-								Predicting </a></h2>
-						<p>In this project I try to forecast Google stock prices using SVM, <br />
-							Linear Regression, and Random Forest models.<br />
-							Includes feature engineering and model performance visualization.</p>
+			</article>
+			<!-- Posts -->
+			<section class="posts">
+				<article>
+					<header>
+						<h2><a href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project">KMeans
+								Clustering <br />
+								Project</a></h2>
 					</header>
-					<a class="image main"
-						href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-"><img
-							alt="Google Stock Predicting"
-							src="{{ url_for('static', filename='assets/images/pic01.jpg') }}" /></a>
+					<a class="image fit" href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project"><img alt
+							src="{{ url_for('static', filename='assets/images/pic02.png') }}" /></a>
+					<p>Educational project demonstrating KMeans clustering with both manual
+						implementation and real-world dataset analysis (Titanic). Includes
+						preprocessing, visualization, evaluation, and insights.</p>
 					<ul class="actions special">
-						<li><a class="button large"
-								href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-">Full
+						<li><a class="button" href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project">Full
 								Story</a></li>
 					</ul>
 				</article>
-				<!-- Posts -->
-				<section class="posts">
-					<article>
-						<header>
-							<h2><a
-									href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project">KMeans
-									Clustering <br />
-									Project</a></h2>
-						</header>
-						<a class="image fit"
-							href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project"><img
-								alt
-								src="{{ url_for('static', filename='assets/images/pic02.png') }}" /></a>
-						<p>Educational project demonstrating KMeans clustering with both manual
-							implementation and real-world dataset analysis (Titanic). Includes
-							preprocessing, visualization, evaluation, and insights.</p>
-						<ul class="actions special">
-							<li><a class="button"
-									href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project">Full
-									Story</a></li>
-						</ul>
-					</article>
-					<article>
-						<header>
-							<h2><a
-									href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison">Breast
-									Cancer diagnosis<br />
-									with KNN alogrithims</a></h2>
-						</header>
-						<a class="image fit"
-							href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison"><img
-								alt
-								src="{{ url_for('static', filename='assets/images/pic03.jpg') }}" /></a>
-						<p>A simple machine learning project comparing a manual K-Nearest
-							Neighbors (KNN) implementation with Scikit-learn’s KNN classifier on
-							breast cancer diagnosis data.</p>
-						<ul class="actions special">
-							<li><a class="button"
-									href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison">Full
-									Story</a></li>
-						</ul>
-					</article>
-					<!-- <article>
+				<article>
+					<header>
+						<h2><a href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison">Breast
+								Cancer diagnosis<br />
+								with KNN alogrithims</a></h2>
+					</header>
+					<a class="image fit" href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison"><img
+							alt src="{{ url_for('static', filename='assets/images/pic03.jpg') }}" /></a>
+					<p>A simple machine learning project comparing a manual K-Nearest
+						Neighbors (KNN) implementation with Scikit-learn’s KNN classifier on
+						breast cancer diagnosis data.</p>
+					<ul class="actions special">
+						<li><a class="button"
+								href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison">Full
+								Story</a></li>
+					</ul>
+				</article>
+				<!-- <article>
 									 <header>
 										<span class="date">April 18, 2017</span>
 										<h2><a href="#">Ante mattis<br />
@@ -171,8 +161,8 @@
 									</ul>
 								</article>
 							</section> -->
-					<!-- Footer -->
-					<!--	<footer>
+				<!-- Footer -->
+				<!--	<footer>
 								<div class="pagination">
 									<!--<a href="#" class="previous">Prev</a>
 									<a href="#" class="page active">1</a>
@@ -185,81 +175,78 @@
 									<a href="#" class="next">Next</a>
 								</div>
 							</footer> -->
-				</section></div>
-			<!-- Footer -->
-			<footer id="footer">
-				<section>
-					<form action="{{ url_for('send_email') }}" method="post">
-						<div class="fields">
-							<div class="field">
-								<label for="name">Name</label>
-								<input id="name" name="name" type="text" />
-							</div>
-							<div class="field">
-								<label for="email">Email</label>
-								<input id="email" name="email" type="text" />
-							</div>
-							<div class="field">
-								<label for="message">Message</label>
-								<textarea id="message" name="message" rows="3"></textarea>
-							</div>
-						</div>
-						<ul class="actions">
-							<li><input type="submit" value="Send Message" /></li>
-						</ul>
-					</form>
-				</section>
-				<section class="split contact">
-					<section class="alt">
-						<h3>Address</h3>
-						<p>Oman | Muscat <br />
-						</p>
-					</section>
-					<section>
-						<h3>Phone</h3>
-						<p><a href="#">+968 9929 3046</a></p>
-					</section>
-					<section>
-						<h3>Email</h3>
-						<p><a href="#">mo.asaad999@gmail.com</a></p>
-					</section>
-					<section>
-						<h3>Social</h3>
-						<ul class="icons alt">
-							<li><a class="icon brands alt fa-kaggle"
-									href="https://www.kaggle.com/mohammedasaad7"><span
-										class="label">Kaggle</span></a></li>
-							<li><a class="icon brands alt fa-facebook-f"
-									href="https://www.facebook.com/share/16nJ9qLFRP/"><span
-										class="label">Facebook</span></a></li>
-							<li><a class="icon brands alt fa-instagram"
-									href="https://www.instagram.com/moh7_asaad?igsh=eDN3bWUxMzJ5NmRm"><span
-										class="label">Instagram</span></a></li>
-							<li><a class="icon brands alt fa-github"
-									href="https://github.com/Mohammed-asaad-AI"><span
-										class="label">GitHub</span></a></li>
-						</ul>
-					</section>
-				</section>
-			</footer>
-			<!-- Copyright -->
-			<div id="copyright">
-				<ul><li>© Mohammed Asaad </li><li>Design: <a
-							href="https://html5up.net">HTML5 UP</a></li></ul>
-			</div>
+			</section>
 		</div>
-		<!-- Scripts -->
-		<script
-			src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
-		<script
-			src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js') }}"></script>
-		<script
-			src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
-		<script
-			src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
-		<script
-			src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
-		<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
-	</body>
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<form action="{{ url_for('send_email') }}" method="post">
+					<div class="fields">
+						<div class="field">
+							<label for="name">Name</label>
+							<input id="name" name="name" type="text" />
+						</div>
+						<div class="field">
+							<label for="email">Email</label>
+							<input id="email" name="email" type="text" />
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea id="message" name="message" rows="3"></textarea>
+						</div>
+					</div>
+					<ul class="actions">
+						<li><input type="submit" value="Send Message" /></li>
+					</ul>
+				</form>
+			</section>
+			<section class="split contact">
+				<section class="alt">
+					<h3>Address</h3>
+					<p>Oman | Muscat <br />
+					</p>
+				</section>
+				<section>
+					<h3>Phone</h3>
+					<p><a href="#">+968 9929 3046</a></p>
+				</section>
+				<section>
+					<h3>Email</h3>
+					<p><a href="#">mo.asaad999@gmail.com</a></p>
+				</section>
+				<section>
+					<h3>Social</h3>
+					<ul class="icons alt">
+						<li><a class="icon brands alt fa-kaggle" href="https://www.kaggle.com/mohammedasaad7"><span
+									class="label">Kaggle</span></a></li>
+						<li><a class="icon brands alt fa-facebook-f"
+								href="https://www.facebook.com/share/16nJ9qLFRP/"><span
+									class="label">Facebook</span></a></li>
+						<li><a class="icon brands alt fa-instagram"
+								href="https://www.instagram.com/moh7_asaad?igsh=eDN3bWUxMzJ5NmRm"><span
+									class="label">Instagram</span></a></li>
+						<li><a class="icon brands alt fa-github" href="https://github.com/Mohammed-asaad-AI"><span
+									class="label">GitHub</span></a></li>
+					</ul>
+				</section>
+			</section>
+		</footer>
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul>
+				<li>© Mohammed Asaad </li>
+				<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- Scripts -->
+	<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/jquery.scrolly.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/util.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+</body>
+
 </html>
