@@ -1,133 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mohammed Asaad | Portfolio</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohammed Asaad | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #001f3f, #003b6f);
+      color: #ffffff;
+      scroll-behavior: smooth;
+    }
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+    header {
+      background-color: #000814;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 0 20px #00ffff44;
+    }
 
-	<style>
-		body {
-			margin: 0;
-			font-family: 'Orbitron', sans-serif;
-			background: linear-gradient(to bottom, #011c1e, #063a42);
-			color: #fff;
-			scroll-behavior: smooth;
-		}
-		header {
-			background-color: rgba(0, 128, 128, 0.9);
-			padding: 20px;
-			text-align: center;
-			position: sticky;
-			top: 0;
-			z-index: 999;
-		}
-		header nav a {
-			margin: 0 15px;
-			text-decoration: none;
-			color: white;
-			transition: color 0.3s;
-		}
-		header nav a:hover {
-			color: #00ffff;
-		}
-		section {
-			padding: 60px 10%;
-		}
-		#about img {
-			width: 180px;
-			height: 180px;
-			border-radius: 50%;
-			border: 4px solid #00ffff;
-			object-fit: cover;
-			box-shadow: 0 0 25px #00ffff44;
-		}
-		.project-card {
-			background: rgba(255,255,255,0.05);
-			border-radius: 12px;
-			padding: 20px;
-			margin-bottom: 40px;
-			box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-			transition: transform 0.3s ease;
-		}
-		.project-card:hover {
-			transform: translateY(-5px);
-		}
-		.project-card img {
-			width: 100%;
-			border-radius: 10px;
-			margin-bottom: 15px;
-		}
-		footer {
-			text-align: center;
-			padding: 20px;
-			background-color: #022f33;
-		}
-	</style>
+    nav a {
+      color: #00ffff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 20px 40px;
+      text-align: center;
+    }
+
+    .profile-img {
+      border-radius: 50%;
+      border: 5px solid #00ffffaa;
+      width: 180px;
+      height: 180px;
+      box-shadow: 0 0 30px #00ffff55;
+      object-fit: cover;
+      margin-bottom: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.08);
+    }
+
+    .section {
+      padding: 60px 20px;
+      border-bottom: 1px solid #00ffff33;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #001f3f;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffff33;
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px #00ffff88;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: #00ffff;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #000814;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-	<header>
-		<h1>Mohammed Asaad</h1>
-		<nav>
-			<a href="#about">About</a>
-			<a href="#projects">Projects</a>
-			<a href="#contact">Contact</a>
-		</nav>
-	</header>
 
-	<section id="about" data-aos="fade-up">
-		<div style="text-align:center;">
-			<img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Mohammed Asaad">
-			<h2>Junior Cloud & AI Engineer</h2>
-			<p>Self-taught machine learning engineer passionate about data and AI, with strong academic foundation and hands-on project experience in predictive modelling, clustering, and real-world analytics.</p>
-		</div>
-	</section>
+  <header>
+    <h1>Mohammed Asaad</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-	<section id="projects">
-		<h2 data-aos="fade-right">Projects</h2>
-		<div class="project-card" data-aos="zoom-in">
-			<img src="{{ url_for('static', filename='images/pic02.png') }}" alt="KMeans">
-			<h3>KMeans Clustering</h3>
-			<p>Manual implementation and visualization of KMeans algorithm. Analysed real-world data from the Titanic dataset to form clusters and interpret passenger groupings.</p>
-			<a href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project" target="_blank" style="color:#00ffff">View on GitHub</a>
-		</div>
-		<div class="project-card" data-aos="zoom-in">
-			<img src="{{ url_for('static', filename='images/pic03.jpg') }}" alt="Breast Cancer Prediction">
-			<h3>Breast Cancer KNN Comparison</h3>
-			<p>Compared different KNN classifiers on breast cancer dataset to predict diagnosis and enhance early detection accuracy.</p>
-			<a href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison" target="_blank" style="color:#00ffff">View on GitHub</a>
-		</div>
-		<div class="project-card" data-aos="zoom-in">
-			<img src="{{ url_for('static', filename='images/pic01.jpg') }}" alt="Google Stock Prediction">
-			<h3>Google Stock Predictor</h3>
-			<p>Built LSTM model to predict Google's stock price using historical data. Visualized trends and tested multiple window sizes and epochs for optimization.</p>
-			<a href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-" target="_blank" style="color:#00ffff">View on GitHub</a>
-		</div>
-	</section>
+  <section class="hero" id="about">
+    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile" class="profile-img"/>
+    <h2>Junior AI & Cloud Engineer</h2>
+    <p>Passionate about solving real-world problems with technology and data. Skilled in Python, machine learning, and modern web solutions.</p>
+  </section>
 
-	<section id="contact" data-aos="fade-up">
-		<h2>Contact</h2>
-		<p style="text-align:center">📧 mo.asaad999@gmail.com</p>
-	</section>
+  <section class="section" id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='images/pic01.jpg') }}" alt="Google Clone">
+        <h3>Google Homepage Clone</h3>
+        <p>A front-end replica of Google's homepage using HTML and CSS for UI/UX training.</p>
+      </div>
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='images/pic02.png') }}" alt="KMeans Clustering">
+        <h3>KMeans Clustering</h3>
+        <p>Manual KMeans algorithm applied on Titanic dataset. Includes visualization and analysis.</p>
+      </div>
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='images/pic03.jpg') }}" alt="Breast Cancer Prediction">
+        <h3>Breast Cancer Detection</h3>
+        <p>ML model using Scikit-learn to predict breast cancer from clinical dataset.</p>
+      </div>
+    </div>
+  </section>
 
-	<footer>
-		<p>&copy; 2025 Mohammed Asaad. All rights reserved.</p>
-	</footer>
+  <section class="section" id="contact">
+    <h2>Contact Me</h2>
+    <p>📧 mo.asaad999@gmail.com</p>
+    <p>📍 Muscat, Oman</p>
+  </section>
 
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script>
-		AOS.init({
-			duration: 1000,
-			easing: 'ease-in-out',
-			once: true
-		});
-	</script>
+  <footer>
+    &copy; 2025 Mohammed Asaad. All rights reserved.
+  </footer>
+
 </body>
 </html>
