@@ -18,7 +18,8 @@
 
 </head>
 
-<body>
+<body class="fade-on-scroll">
+
 
   <header>
     <h1>Mohammed Asaad</h1>
@@ -174,6 +175,25 @@
       once: true // الحركة تظهر مرة واحدة فقط
     });
   </script>
+
+<script>
+  let lastScrollTop = 0;
+  const pageContent = document.querySelector("body");
+
+  window.addEventListener("scroll", function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // Scrolling Down
+      pageContent.classList.add("page-hidden");
+    } else {
+      // Scrolling Up
+      pageContent.classList.remove("page-hidden");
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  }, false);
+</script>
 
 
 </body>
