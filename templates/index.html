@@ -3,6 +3,9 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+<meta name="description" content="Mohammed Asaad's portfolio – AI & Cloud Engineer. Projects, skills, and contact.">
+<meta name="author" content="Mohammed Asaad">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -109,6 +112,21 @@
 
     </div>
   </section>
+<section class="section" id="services" style="text-align: center;">
+  <h2 class="pulse-glow" data-aos="fade-up">What I Can Do</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;">
+    <div class="project-card" data-aos="flip-left">
+      <i class="fas fa-brain" style="font-size: 36px; margin-bottom: 15px;"></i>
+      <h3>AI Prototyping</h3>
+      <p>Build machine learning models for prediction, detection, and classification tasks.</p>
+    </div>
+    <div class="project-card" data-aos="flip-left">
+      <i class="fas fa-cloud" style="font-size: 36px; margin-bottom: 15px;"></i>
+      <h3>Cloud Automation</h3>
+      <p>Deploy scalable apps and pipelines using Azure services (Functions, Logic Apps, VMs...)</p>
+    </div>
+  </div>
+</section>
 
 
 
@@ -144,13 +162,28 @@
     </div>
 
   </section>
+<section class="section" id="contact" style="text-align: center;">
+  <h2 data-aos="fade-up" class="pulse-glow" style="font-size: 36px; margin-bottom: 40px;">Contact Me</h2>
+
+  <form action="{{ url_for('send_email') }}" method="POST" class="contact-form" style="max-width: 600px; margin: auto;" data-aos="fade-up">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit" class="cyber-btn">Send Message</button>
+  </form>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <p style="margin-top: 20px; color: {% if category == 'success' %}#0f0{% else %}#f44{% endif %};">
+          {{ message }}
+        </p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</section>
 
 
-  <section class="section" id="contact" style="text-align: center;">
-    <h2 data-aos="fade-up" class="pulse-glow" style="font-size: 36px; margin-bottom: 40px;">Contact Me</h2>
-    <p data-aos="fade-up" data-aos-delay="100">📧 mo.asaad999@gmail.com</p>
-    <p data-aos="fade-up" data-aos-delay="200">📍 Muscat, Oman</p>
-  </section>
 
 
   <footer style="background-color: #000814; text-align: center; padding: 20px; font-size: 14px; color: #ccc;">
@@ -165,6 +198,13 @@
         <i class="fab fa-linkedin"></i>
       </a>
     </div>
+
+    <p>&copy; <span id="year"></span> Mohammed Asaad. All rights reserved.</p>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
   </footer>
 
 
@@ -199,6 +239,17 @@
   });
 </script>
 
+<button onclick="window.scrollTo({top:0, behavior:'smooth'})"
+style="position: fixed; bottom: 20px; right: 20px; background: #0ff; color: #000; border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 20px; cursor: pointer; display: none;" id="scrollTopBtn">
+↑
+</button>
+
+<script>
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  window.addEventListener("scroll", () => {
+    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+</script>
 
 </body>
 
