@@ -193,29 +193,24 @@
     </nav>
   </header>
 
-  <section class="hero" id="about">
-    <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="Profile" class="profile-img" />
-    <h2>Junior AI & Cloud Engineer</h2>
-    <p>
-      I'm a passionate technology enthusiast currently working as a <strong>Junior Cloud and AI Engineer</strong>. I
-      specialize in developing intelligent solutions and deploying cloud-based applications that solve real-world
-      problems.
-    </p>
-    <p>
-      My background combines a solid foundation in <strong>Python programming, machine learning, and cloud
-        infrastructure (especially Azure)</strong> with hands-on experience in data analysis, automation, and deploying
-      scalable web services.
-    </p>
-    <p>
-      I'm constantly learning and expanding my knowledge in AI, DevOps, and cloud security — aiming to build systems
-      that are not only smart, but also reliable and efficient.
-    </p>
-    <div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-      <a href="{{ url_for('static', filename='assets/cv.pdf') }}" class="cyber-btn" download>Download CV</a>
-      <a href="{{ url_for('static', filename='assets/cv.pdf') }}" class="cyber-btn" target="_blank">View CV</a>
-    </div>
+ <section class="hero" id="about">
+  <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="Profile" class="profile-img" />
+  <h2 class="pulse-glow" style="font-size: 32px; margin-bottom: 20px;">Junior AI & Cloud Engineer</h2>
 
-  </section>
+  <p style="max-width: 700px; margin: auto; line-height: 1.8; font-size: 18px;">
+    I build smart, cloud-powered solutions that solve real problems. As a Junior AI & Cloud Engineer, I combine AI tools and cloud platforms (especially Azure) to turn data into impact.
+  </p>
+
+  <p style="max-width: 700px; margin: 20px auto; line-height: 1.8; font-size: 18px;">
+    I’m passionate about Python, automation, and deploying scalable apps — always learning, always improving.
+  </p>
+
+  <div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+    <a href="{{ url_for('static', filename='assets/cv.pdf') }}" class="cyber-btn" download>Download CV</a>
+    <a href="{{ url_for('static', filename='assets/cv.pdf') }}" class="cyber-btn" target="_blank">View CV</a>
+  </div>
+</section>
+
 
 
 
