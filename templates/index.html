@@ -152,8 +152,33 @@
   </style>
 
   <!-- AOS Animation Library -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    .pulse-glow {
+      animation: pulseGlow 2s infinite;
+      color: #00ffff;
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+        transform: scale(1);
+      }
+
+      50% {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+        transform: scale(1.05);
+      }
+
+      100% {
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+        transform: scale(1);
+      }
+    }
+  </style>
 
 </head>
 
@@ -174,54 +199,63 @@
     <p>Passionate about solving real-world problems with technology and data. Skilled in Python, machine learning, and
       modern web solutions.</p>
   </section>
-  <section class="section" id="skills">
-  <h2 data-aos="fade-up">Skills</h2>
-  <div style="max-width: 800px; margin: auto;">
-    
-    <div data-aos="fade-right" style="margin-bottom: 25px;">
-      <label>Python</label>
-      <div style="background-color: #003b6f; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px #00ffff88;">
-        <div style="width: 90%; background-color: #00ffff; padding: 8px 0; text-align: center; color: #000; font-weight: bold;">90%</div>
+  <section class="section" id="skills" style="text-align: center;">
+    <h2 data-aos="fade-up" class="pulse-glow" style="font-size: 36px; margin-bottom: 40px;">Skills</h2>
+    <div style="max-width: 800px; margin: auto;">
+
+      <div data-aos="fade-right" style="margin-bottom: 25px;">
+        <label>Python</label>
+        <div style="background-color: #003b6f; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px #00ffff88;">
+          <div
+            style="width: 90%; background-color: #00ffff; padding: 8px 0; text-align: center; color: #000; font-weight: bold;">
+            90%</div>
+        </div>
       </div>
-    </div>
 
-    <div data-aos="fade-left" style="margin-bottom: 25px;">
-      <label>Machine Learning (Scikit-learn, Pandas)</label>
-      <div style="background-color: #003b6f; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px #00ffff88;">
-        <div style="width: 85%; background-color: #00ffff; padding: 8px 0; text-align: center; color: #000; font-weight: bold;">85%</div>
+      <div data-aos="fade-left" style="margin-bottom: 25px;">
+        <label>Machine Learning (Scikit-learn, Pandas)</label>
+        <div style="background-color: #003b6f; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px #00ffff88;">
+          <div
+            style="width: 85%; background-color: #00ffff; padding: 8px 0; text-align: center; color: #000; font-weight: bold;">
+            85%</div>
+        </div>
       </div>
-    </div>
 
-    <div data-aos="fade-right" style="margin-bottom: 25px;">
-      <label>Data Visualization (Matplotlib, Seaborn)</label>
-      <div style="background-color: #003b6f; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px #00ffff88;">
-        <div style="width: 80%; background-color: #00ffff; padding: 8px 0; text-align: center; color: #000; font-weight: bold;">80%</div>
+      <div data-aos="fade-right" style="margin-bottom: 25px;">
+        <label>Data Visualization (Matplotlib, Seaborn)</label>
+        <div style="background-color: #003b6f; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px #00ffff88;">
+          <div
+            style="width: 80%; background-color: #00ffff; padding: 8px 0; text-align: center; color: #000; font-weight: bold;">
+            80%</div>
+        </div>
       </div>
-    </div>
 
-    <div data-aos="fade-left" style="margin-bottom: 25px;">
-      <label>Cloud (Azure, GCP Basics)</label>
-      <div style="background-color: #003b6f; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px #00ffff88;">
-        <div style="width: 70%; background-color: #00ffff; padding: 8px 0; text-align: center; color: #000; font-weight: bold;">70%</div>
+      <div data-aos="fade-left" style="margin-bottom: 25px;">
+        <label>Cloud (Azure, GCP Basics)</label>
+        <div style="background-color: #003b6f; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px #00ffff88;">
+          <div
+            style="width: 70%; background-color: #00ffff; padding: 8px 0; text-align: center; color: #000; font-weight: bold;">
+            70%</div>
+        </div>
       </div>
-    </div>
 
-    <div data-aos="fade-up" style="margin-bottom: 25px;">
-      <label>HTML/CSS/JavaScript</label>
-      <div style="background-color: #003b6f; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px #00ffff88;">
-        <div style="width: 75%; background-color: #00ffff; padding: 8px 0; text-align: center; color: #000; font-weight: bold;">75%</div>
+      <div data-aos="fade-up" style="margin-bottom: 25px;">
+        <label>HTML/CSS/JavaScript</label>
+        <div style="background-color: #003b6f; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px #00ffff88;">
+          <div
+            style="width: 75%; background-color: #00ffff; padding: 8px 0; text-align: center; color: #000; font-weight: bold;">
+            75%</div>
+        </div>
       </div>
+
     </div>
-
-  </div>
-</section>
+  </section>
 
 
 
-  <section class="section" id="projects">
-    <h2>My Projects</h2>
+  <section class="section" id="projects" style="text-align: center;">
+    <h2 data-aos="fade-up" class="pulse-glow" style="font-size: 36px; margin-bottom: 40px;">My Projects</h2>
     <div class="projects">
-
       <div class="project-card">
         <img src="{{ url_for('static', filename='assets/images/pic01.jpg') }}" alt="Google Clone">
         <h3>Google Stock Predicting</h3>
@@ -266,14 +300,14 @@
       <a href="https://linkedin.com/in/mohammed-asaad99" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
   </footer>
-  
+
 
   <script>
-  AOS.init({
-    duration: 1000, // سرعة الحركة بالمللي ثانية
-    once: true // الحركة تظهر مرة واحدة فقط
-  });
-</script>
+    AOS.init({
+      duration: 1000, // سرعة الحركة بالمللي ثانية
+      once: true // الحركة تظهر مرة واحدة فقط
+    });
+  </script>
 
 
 </body>
