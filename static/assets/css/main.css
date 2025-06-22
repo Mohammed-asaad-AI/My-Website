@@ -19,6 +19,8 @@
   text-decoration: none;
   box-shadow: 0 0 10px #0ff, 0 0 20px #0ff inset;
   transition: 0.3s ease;
+   margin-top: 10px;
+  display: inline-block;
 }
 .cyber-btn:hover {
   background-color: #000;
@@ -109,7 +111,6 @@ nav a:hover {
   box-shadow: 0 0 20px #00ffff33;
   padding: 20px;
   width: 300px;
-    padding-bottom: 25px;
   padding-bottom: 25px;
 
   transition: transform 0.4s, box-shadow 0.4s;
@@ -223,4 +224,7 @@ footer {
   opacity: 0 !important;
   transform: translateY(-20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.project-card p {
+  margin-bottom: 15px;
 }
