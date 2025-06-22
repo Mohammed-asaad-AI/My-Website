@@ -3,9 +3,9 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-<meta name="description" content="Mohammed Asaad's portfolio – AI & Cloud Engineer. Projects, skills, and contact.">
-<meta name="author" content="Mohammed Asaad">
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Mohammed Asaad's portfolio – AI & Cloud Engineer. Projects, skills, and contact.">
+  <meta name="author" content="Mohammed Asaad">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -112,21 +112,21 @@
 
     </div>
   </section>
-<section class="section" id="services" style="text-align: center;">
-  <h2 class="pulse-glow" data-aos="fade-up">What I Can Do</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;">
-    <div class="project-card" data-aos="flip-left">
-      <i class="fas fa-brain" style="font-size: 36px; margin-bottom: 15px;"></i>
-      <h3>AI Prototyping</h3>
-      <p>Build machine learning models for prediction, detection, and classification tasks.</p>
+  <section class="section" id="services" style="text-align: center;">
+    <h2 class="pulse-glow" data-aos="fade-up">What I Can Do</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px;">
+      <div class="project-card" data-aos="flip-left">
+        <i class="fas fa-brain" style="font-size: 36px; margin-bottom: 15px;"></i>
+        <h3>AI Prototyping</h3>
+        <p>Build machine learning models for prediction, detection, and classification tasks.</p>
+      </div>
+      <div class="project-card" data-aos="flip-left">
+        <i class="fas fa-cloud" style="font-size: 36px; margin-bottom: 15px;"></i>
+        <h3>Cloud Automation</h3>
+        <p>Deploy scalable apps and pipelines using Azure services (Functions, Logic Apps, VMs...)</p>
+      </div>
     </div>
-    <div class="project-card" data-aos="flip-left">
-      <i class="fas fa-cloud" style="font-size: 36px; margin-bottom: 15px;"></i>
-      <h3>Cloud Automation</h3>
-      <p>Deploy scalable apps and pipelines using Azure services (Functions, Logic Apps, VMs...)</p>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
@@ -162,26 +162,39 @@
     </div>
 
   </section>
-<section class="section" id="contact" style="text-align: center;">
-  <h2 data-aos="fade-up" class="pulse-glow" style="font-size: 36px; margin-bottom: 40px;">Contact Me</h2>
+  <section class="section" id="contact" style="text-align: center;">
+    <h2 data-aos="fade-up" class="pulse-glow" style="font-size: 36px; margin-bottom: 40px;">Contact Me</h2>
 
-  <form action="{{ url_for('send_email') }}" method="POST" class="contact-form" style="max-width: 600px; margin: auto;" data-aos="fade-up">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit" class="cyber-btn">Send Message</button>
-  </form>
+    <form action="{{ url_for('send_email') }}" method="POST" class="contact-form"
+      style="max-width: 600px; margin: auto;" data-aos="fade-up">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="cyber-btn">Send Message</button>
+    </form>
 
-  {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
+ {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div style="margin-top: 25px;">
       {% for category, message in messages %}
-        <p style="margin-top: 20px; color: {% if category == 'success' %}#0f0{% else %}#f44{% endif %};">
-          {{ message }}
+        <p style="
+          color: {% if category == 'success' %}#00ff88{% else %}#ff5555{% endif %};
+          background-color: #001f3f;
+          padding: 12px;
+          border-radius: 8px;
+          max-width: 500px;
+          margin: 10px auto;
+          box-shadow: 0 0 10px #00ffff44;
+        ">
+          ✅ {{ message }}
         </p>
       {% endfor %}
-    {% endif %}
-  {% endwith %}
-</section>
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+  </section>
 
 
 
@@ -201,9 +214,9 @@
 
     <p>&copy; <span id="year"></span> Mohammed Asaad. All rights reserved.</p>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
   </footer>
 
@@ -216,39 +229,56 @@
     });
   </script>
 
+  <script>
+    let lastScroll = 0;
+    const elements = document.querySelectorAll('[data-aos]');
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+
+        if (currentScroll < lastScroll && rect.top < window.innerHeight && rect.top > 0) {
+          // عند الصعود للأعلى، إخفِ العنصر تدريجيًا
+          el.classList.add("element-hidden");
+        } else {
+          // عند النزول للأسفل، أظهره مجددًا
+          el.classList.remove("element-hidden");
+        }
+      });
+
+      lastScroll = currentScroll;
+    });
+  </script>
+
+  <button onclick="window.scrollTo({top:0, behavior:'smooth'})"
+    style="position: fixed; bottom: 20px; right: 20px; background: #0ff; color: #000; border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 20px; cursor: pointer; display: none;"
+    id="scrollTopBtn">
+    ↑
+  </button>
+
+  <script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+  </script>
+
+
+
 <script>
-  let lastScroll = 0;
-  const elements = document.querySelectorAll('[data-aos]');
-
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    elements.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-
-      if (currentScroll < lastScroll && rect.top < window.innerHeight && rect.top > 0) {
-        // عند الصعود للأعلى، إخفِ العنصر تدريجيًا
-        el.classList.add("element-hidden");
-      } else {
-        // عند النزول للأسفل، أظهره مجددًا
-        el.classList.remove("element-hidden");
+  // إخفاء الرسائل بعد 5 ثوانٍ
+  setTimeout(() => {
+    const flashMessages = document.querySelectorAll("p");
+    flashMessages.forEach(msg => {
+      if (msg.textContent.includes("Message sent") || msg.textContent.includes("An error occurred")) {
+        msg.style.transition = "opacity 0.8s ease";
+        msg.style.opacity = 0;
+        setTimeout(() => msg.remove(), 1000); // يزيل العنصر نهائيًا بعد التلاشي
       }
     });
-
-    lastScroll = currentScroll;
-  });
-</script>
-
-<button onclick="window.scrollTo({top:0, behavior:'smooth'})"
-style="position: fixed; bottom: 20px; right: 20px; background: #0ff; color: #000; border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 20px; cursor: pointer; display: none;" id="scrollTopBtn">
-↑
-</button>
-
-<script>
-  const scrollBtn = document.getElementById("scrollTopBtn");
-  window.addEventListener("scroll", () => {
-    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  });
+  }, 5000); // بعد 5 ثوانٍ
 </script>
 
 </body>
