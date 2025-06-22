@@ -219,60 +219,44 @@
 
   </footer>
 
+<script>
+  let lastScrollTop = 0;
+  const elements = document.querySelectorAll('[data-aos]');
+  let hideTimers = new Map(); // لحفظ التايمر لكل عنصر
 
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-  <script>
-    AOS.init({
-      duration: 1000, // سرعة الحركة بالمللي ثانية
-      once: true // الحركة تظهر مرة واحدة فقط
-    });
-  </script>
-  <!-- كود الإخفاء للعناصر العامة -->
-  <script>
-    let lastScroll = 0;
-    const elements = document.querySelectorAll('[data-aos]');
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
 
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-      elements.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-
-        if (currentScroll < lastScroll && rect.top < window.innerHeight && rect.top > 0) {
-          el.classList.add("element-hidden");
-        } else {
-          el.classList.remove("element-hidden");
-        }
-      });
-
-      lastScroll = currentScroll;
-    });
-  </script>
-
-  <!-- كود مخصص لقسم contact فقط -->
-  <script>
-    let lastScrollTop = 0;
-    const contactSection = document.getElementById("contact");
-    let hideTimeout;
-
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      const rect = contactSection.getBoundingClientRect();
-
+      // عند الظهور (النزول للأسفل)
       if (rect.top < window.innerHeight && rect.bottom > 0) {
-        contactSection.classList.remove("element-hidden");
-        if (hideTimeout) clearTimeout(hideTimeout);
+        el.classList.remove("element-hidden");
+        // إلغاء أي مؤقت إخفاء سابق لهذا العنصر
+        if (hideTimers.has(el)) {
+          clearTimeout(hideTimers.get(el));
+          hideTimers.delete(el);
+        }
       }
 
-      if (currentScroll < lastScrollTop && rect.top < window.innerHeight && rect.top > -100) {
-        hideTimeout = setTimeout(() => {
-          contactSection.classList.add("element-hidden");
-        }, 600);
+      // عند الصعود
+      if (currentScroll < lastScrollTop && rect.top < window.innerHeight && rect.top > 0) {
+        // ضع مؤقتًا لإخفاء العنصر بعد تأخير
+        if (!hideTimers.has(el)) {
+          const timer = setTimeout(() => {
+            el.classList.add("element-hidden");
+            hideTimers.delete(el);
+          }, 500); // ← تأخير 0.5 ثانية قبل الإخفاء
+          hideTimers.set(el, timer);
+        }
       }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
-  </script>
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+</script>
+
 
 
   <button onclick="window.scrollTo({top:0, behavior:'smooth'})"
