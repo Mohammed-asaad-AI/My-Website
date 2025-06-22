@@ -161,35 +161,46 @@
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
+ </header>
 
-  <section class="hero" id="about">
-    <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="Profile" class="profile-img" />
-    <h2>Junior AI & Cloud Engineer</h2>
-    <p>Passionate about solving real-world problems with technology and data. Skilled in Python, machine learning, and
-      modern web solutions.</p>
-  </section>
+<section class="hero" id="about">
+  <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="Profile" class="profile-img" />
+  <h2>Junior AI & Cloud Engineer</h2>
+  <p>Passionate about solving real-world problems with technology and data. Skilled in Python, machine learning, and
+    modern web solutions.</p>
+</section>
 
-  <section class="section" id="projects">
-    <h2>My Projects</h2>
-    <div class="projects">
-      <div class="project-card">
+<section class="section" id="projects">
+  <h2>My Projects</h2>
+  <div class="projects">
+
+    <div class="project-card">
+      <a href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-" target="_blank">
         <img src="{{ url_for('static', filename='assets/images/pic01.jpg') }}" alt="Google Clone">
-        <h3>Google Homepage Clone</h3>
-        <p>A front-end replica of Google's homepage using HTML and CSS for UI/UX training.</p>
-      </div>
-      <div class="project-card">
+        <h3>Google Stock Predicting</h3>
+        <p>Forecasts Google stock prices using SVM, Linear Regression, and Random Forest. Includes feature engineering and visualization.</p>
+      </a>
+    </div>
+
+    <div class="project-card">
+      <a href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project" target="_blank">
         <img src="{{ url_for('static', filename='assets/images/pic02.png') }}" alt="KMeans Clustering">
         <h3>KMeans Clustering</h3>
         <p>Manual KMeans algorithm applied on Titanic dataset. Includes visualization and analysis.</p>
-      </div>
-      <div class="project-card">
+      </a>
+    </div>
+
+    <div class="project-card">
+      <a href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison" target="_blank">
         <img src="{{ url_for('static', filename='assets/images/pic03.jpg') }}" alt="Breast Cancer Prediction">
         <h3>Breast Cancer Detection</h3>
         <p>ML model using Scikit-learn to predict breast cancer from clinical dataset.</p>
-      </div>
+      </a>
     </div>
-  </section>
+
+  </div>
+</section>
+
 
   <section class="section" id="contact">
     <h2>Contact Me</h2>
