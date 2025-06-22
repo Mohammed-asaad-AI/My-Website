@@ -4884,7 +4884,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
   padding: 12px 28px;
   font-size: 16px;
   font-weight: 600;
-  color: #0ff;
+  color: #00ffff;
   background-color: transparent;
   border: 2px solid #0ff;
   border-radius: 50px;
@@ -4914,7 +4914,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 }
 
 .button:hover {
-  color: #000;
+  color: #ff00ff;
   background-color: #0ff;
   box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
 }
