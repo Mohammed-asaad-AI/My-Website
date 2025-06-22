@@ -165,4 +165,53 @@ footer {
 .profile-img:hover {
   transform: scale(1.05);
 }
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 10px 30px;
+  }
+
+  h2 {
+    font-size: 24px !important;
+  }
+
+  .about-text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .cv-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 10px 5px;
+    font-size: 14px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .section {
+    padding: 40px 10px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
 
