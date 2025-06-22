@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="fade-on-scroll">
+<body>
 
 
   <header>
@@ -177,23 +177,28 @@
   </script>
 
 <script>
-  let lastScrollTop = 0;
-  const pageContent = document.querySelector("body");
+  let lastScroll = 0;
+  const elements = document.querySelectorAll('[data-aos]');
 
-  window.addEventListener("scroll", function () {
+  window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll < lastScrollTop) {
-      // Scrolling Up
-      pageContent.classList.add("page-hidden");
-    } else {
-      // Scrolling Down
-      pageContent.classList.remove("page-hidden");
-    }
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  }, false);
+      if (currentScroll < lastScroll && rect.top < window.innerHeight && rect.top > 0) {
+        // عند الصعود للأعلى، إخفِ العنصر تدريجيًا
+        el.classList.add("element-hidden");
+      } else {
+        // عند النزول للأسفل، أظهره مجددًا
+        el.classList.remove("element-hidden");
+      }
+    });
+
+    lastScroll = currentScroll;
+  });
 </script>
+
 
 </body>
 

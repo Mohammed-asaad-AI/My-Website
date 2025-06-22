@@ -214,12 +214,8 @@ footer {
     font-size: 12px;
   }
 }
-.fade-on-scroll {
+.element-hidden {
+  opacity: 0 !important;
+  transform: translateY(-20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.page-hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-20px); /* سحب لأعلى */
 }
