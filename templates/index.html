@@ -35,7 +35,7 @@
   <section class="hero" id="about">
     <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="Profile" class="profile-img" />
 
-    <h2  style="margin-top: 20px;">Junior AI & Cloud Engineer</h2>
+    <h2 style="margin-top: 20px;">Junior AI & Cloud Engineer</h2>
 
     <div class="about-text">
       <p>
@@ -173,11 +173,11 @@
       <button type="submit" class="cyber-btn">Send Message</button>
     </form>
 
- {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
     <div style="margin-top: 25px;">
       {% for category, message in messages %}
-        <p style="
+      <p style="
           color: {% if category == 'success' %}#00ff88{% else %}#ff5555{% endif %};
           background-color: #001f3f;
           padding: 12px;
@@ -186,12 +186,12 @@
           margin: 10px auto;
           box-shadow: 0 0 10px #00ffff44;
         ">
-          ✅ {{ message }}
-        </p>
+        ✅ {{ message }}
+      </p>
       {% endfor %}
     </div>
-  {% endif %}
-{% endwith %}
+    {% endif %}
+    {% endwith %}
 
 
   </section>
@@ -227,7 +227,7 @@
       once: true // الحركة تظهر مرة واحدة فقط
     });
   </script>
-
+  <!-- كود الإخفاء للعناصر العامة -->
   <script>
     let lastScroll = 0;
     const elements = document.querySelectorAll('[data-aos]');
@@ -239,10 +239,8 @@
         const rect = el.getBoundingClientRect();
 
         if (currentScroll < lastScroll && rect.top < window.innerHeight && rect.top > 0) {
-          // عند الصعود للأعلى، إخفِ العنصر تدريجيًا
           el.classList.add("element-hidden");
         } else {
-          // عند النزول للأسفل، أظهره مجددًا
           el.classList.remove("element-hidden");
         }
       });
@@ -250,6 +248,32 @@
       lastScroll = currentScroll;
     });
   </script>
+
+  <!-- كود مخصص لقسم contact فقط -->
+  <script>
+    let lastScrollTop = 0;
+    const contactSection = document.getElementById("contact");
+    let hideTimeout;
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const rect = contactSection.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        contactSection.classList.remove("element-hidden");
+        if (hideTimeout) clearTimeout(hideTimeout);
+      }
+
+      if (currentScroll < lastScrollTop && rect.top < window.innerHeight && rect.top > -100) {
+        hideTimeout = setTimeout(() => {
+          contactSection.classList.add("element-hidden");
+        }, 600);
+      }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+  </script>
+
 
   <button onclick="window.scrollTo({top:0, behavior:'smooth'})"
     style="position: fixed; bottom: 20px; right: 20px; background: #0ff; color: #000; border: none; border-radius: 50%; width: 45px; height: 45px; font-size: 20px; cursor: pointer; display: none;"
@@ -266,19 +290,19 @@
 
 
 
-<script>
-  // إخفاء الرسائل بعد 5 ثوانٍ
-  setTimeout(() => {
-    const flashMessages = document.querySelectorAll("p");
-    flashMessages.forEach(msg => {
-      if (msg.textContent.includes("Message sent") || msg.textContent.includes("An error occurred")) {
-        msg.style.transition = "opacity 0.8s ease";
-        msg.style.opacity = 0;
-        setTimeout(() => msg.remove(), 1000); // يزيل العنصر نهائيًا بعد التلاشي
-      }
-    });
-  }, 5000); // بعد 5 ثوانٍ
-</script>
+  <script>
+    // إخفاء الرسائل بعد 5 ثوانٍ
+    setTimeout(() => {
+      const flashMessages = document.querySelectorAll("p");
+      flashMessages.forEach(msg => {
+        if (msg.textContent.includes("Message sent") || msg.textContent.includes("An error occurred")) {
+          msg.style.transition = "opacity 0.8s ease";
+          msg.style.opacity = 0;
+          setTimeout(() => msg.remove(), 1000); // يزيل العنصر نهائيًا بعد التلاشي
+        }
+      });
+    }, 5000); // بعد 5 ثوانٍ
+  </script>
 
 </body>
 
