@@ -183,18 +183,17 @@
   window.addEventListener("scroll", function () {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > lastScrollTop) {
-      // Scrolling Down
+    if (currentScroll < lastScrollTop) {
+      // Scrolling Up
       pageContent.classList.add("page-hidden");
     } else {
-      // Scrolling Up
+      // Scrolling Down
       pageContent.classList.remove("page-hidden");
     }
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }, false);
 </script>
-
 
 </body>
 

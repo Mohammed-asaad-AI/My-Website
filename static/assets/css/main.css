@@ -221,5 +221,5 @@ footer {
 .page-hidden {
   opacity: 0;
   pointer-events: none;
-  transform: translateY(20px);
+  transform: translateY(-20px); /* سحب لأعلى */
 }
