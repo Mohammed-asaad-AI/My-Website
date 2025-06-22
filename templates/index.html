@@ -198,7 +198,17 @@
     <h2>Junior AI & Cloud Engineer</h2>
     <p>Passionate about solving real-world problems with technology and data. Skilled in Python, machine learning, and
       modern web solutions.</p>
+
+    <div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+    <a href="{{ url_for('static', filename='assets/cv.pdf') }}" class="cyber-btn" download>Download CV</a>
+    <a href="{{ url_for('static', filename='assets/cv.pdf') }}" class="cyber-btn" target="_blank">View CV</a>
+  </div>
+
   </section>
+
+
+
+
   <section class="section" id="skills" style="text-align: center;">
     <h2 data-aos="fade-up" class="pulse-glow" style="font-size: 36px; margin-bottom: 40px;">Skills</h2>
     <div style="max-width: 800px; margin: auto;">
@@ -253,50 +263,59 @@
 
 
 
- <section class="section" id="projects" style="text-align: center;">
-  <h2 data-aos="fade-up" class="pulse-glow" style="font-size: 36px; margin-bottom: 40px;">My Projects</h2>
-  <div class="projects">
+  <section class="section" id="projects" style="text-align: center;">
+    <h2 data-aos="fade-up" class="pulse-glow" style="font-size: 36px; margin-bottom: 40px;">My Projects</h2>
+    <div class="projects">
 
-  <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-    <img src="{{ url_for('static', filename='assets/images/pic01.jpg') }}" alt="Google Clone">
-    <h3>Google Stock Predicting</h3>
-    <p>Forecasts Google stock prices using SVM, Linear Regression, and Random Forest. Includes feature engineering and visualization.</p>
-    <a href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-" class="cyber-btn" target="_blank">View Project</a>
-  </div>
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="{{ url_for('static', filename='assets/images/pic01.jpg') }}" alt="Google Clone">
+        <h3>Google Stock Predicting</h3>
+        <p>Forecasts Google stock prices using SVM, Linear Regression, and Random Forest. Includes feature engineering
+          and visualization.</p>
+        <a href="https://github.com/Mohammed-asaad-AI/Google_Stock_Predicting-" class="cyber-btn" target="_blank">View
+          Project</a>
+      </div>
 
-  <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-    <img src="{{ url_for('static', filename='assets/images/pic02.png') }}" alt="KMeans Clustering">
-    <h3>KMeans Clustering</h3>
-    <p>Manual KMeans algorithm applied on Titanic dataset. Includes visualization and analysis.</p>
-    <a href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project" class="cyber-btn" target="_blank">View Project</a>
-  </div>
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="{{ url_for('static', filename='assets/images/pic02.png') }}" alt="KMeans Clustering">
+        <h3>KMeans Clustering</h3>
+        <p>Manual KMeans algorithm applied on Titanic dataset. Includes visualization and analysis.</p>
+        <a href="https://github.com/Mohammed-asaad-AI/KMeans-Clustering-Project" class="cyber-btn" target="_blank">View
+          Project</a>
+      </div>
 
-  <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-    <img src="{{ url_for('static', filename='assets/images/pic03.jpg') }}" alt="Breast Cancer Prediction">
-    <h3>Breast Cancer Detection</h3>
-    <p>ML model using Scikit-learn to predict breast cancer from clinical dataset.</p>
-    <a href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison" class="cyber-btn" target="_blank">View Project</a>
-  </div>
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="{{ url_for('static', filename='assets/images/pic03.jpg') }}" alt="Breast Cancer Prediction">
+        <h3>Breast Cancer Detection</h3>
+        <p>ML model using Scikit-learn to predict breast cancer from clinical dataset.</p>
+        <a href="https://github.com/Mohammed-asaad-AI/Breast-Cancer-KNN-Comparison" class="cyber-btn"
+          target="_blank">View Project</a>
+      </div>
 
-</div>
-
-  </section>
-
-
-
-  <section class="section" id="contact">
-    <h2>Contact Me</h2>
-    <p>📧 mo.asaad999@gmail.com</p>
-    <p>📍 Muscat, Oman</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Mohammed Asaad. All rights reserved.</p>
-    <div>
-      <a href="https://github.com/Mohammed-asaad-AI" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/mohammed-asaad99" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
-  </footer>
+
+  </section>
+
+
+<section class="section" id="contact" style="text-align: center;">
+  <h2 data-aos="fade-up" class="pulse-glow" style="font-size: 36px; margin-bottom: 40px;">Contact Me</h2>
+  <p data-aos="fade-up" data-aos-delay="100">📧 mo.asaad999@gmail.com</p>
+  <p data-aos="fade-up" data-aos-delay="200">📍 Muscat, Oman</p>
+</section>
+
+
+  <footer style="background-color: #000814; text-align: center; padding: 20px; font-size: 14px; color: #ccc;">
+  <p>&copy; 2025 Mohammed Asaad. All rights reserved.</p>
+  <div style="margin-top: 10px;">
+    <a href="https://github.com/Mohammed-asaad-AI" target="_blank" style="font-size: 28px; margin: 0 10px; color: #00ffff; transition: 0.3s;">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://linkedin.com/in/mohammed-asaad99" target="_blank" style="font-size: 28px; margin: 0 10px; color: #00ffff; transition: 0.3s;">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+</footer>
+
 
 
   <script>
