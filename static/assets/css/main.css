@@ -294,3 +294,24 @@ footer {
   right: 20px;
   z-index: 1000;
 }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  background-color: var(--card-bg); /* خلفية كالبطاقات */
+  color: var(--text-color);
+  box-shadow: 0 0 10px var(--accent-color);
+  transition: 0.3s ease;
+}
+
+/* توهج أقوى عند التركيز */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color);
+  background-color: var(--bg-color);
+}
