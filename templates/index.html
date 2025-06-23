@@ -29,14 +29,15 @@
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="#skills">Skills</a>
 
       <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+
       <a href="#contact">Contact</a>
     </nav>
     <button onclick="toggleTheme()" class="cyber-btn" id="themeToggleBtn">
-    🌓
-  </button>
+      🌓
+    </button>
   </header>
   {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
@@ -275,21 +276,21 @@
   </script>
 
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const flashes = document.querySelectorAll(".custom-flash");
-    flashes.forEach((flash) => {
-      flash.style.display = "block";
-      setTimeout(() => {
-        flash.style.opacity = "1";
-      }, 100);
-      setTimeout(() => {
-        flash.style.opacity = "0";
-        setTimeout(() => { flash.remove(); }, 1000);
-      }, 5000); // ← مدة الظهور
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const flashes = document.querySelectorAll(".custom-flash");
+      flashes.forEach((flash) => {
+        flash.style.display = "block";
+        setTimeout(() => {
+          flash.style.opacity = "1";
+        }, 100);
+        setTimeout(() => {
+          flash.style.opacity = "0";
+          setTimeout(() => { flash.remove(); }, 1000);
+        }, 5000); // ← مدة الظهور
+      });
     });
-  });
-</script>
+  </script>
 
 
   <script>
@@ -302,30 +303,30 @@
   <script src="{{ url_for('static', filename='assets/js/flash.js') }}"></script>
 
   <script>
-  let isLight = false;
+    let isLight = false;
 
-  function toggleTheme() {
-    const root = document.documentElement;
+    function toggleTheme() {
+      const root = document.documentElement;
 
-    if (!isLight) {
-      root.style.setProperty('--bg-color', '#ffffff');
-      root.style.setProperty('--card-bg', '#f0f0f0');
-      root.style.setProperty('--text-color', '#000000');
-      root.style.setProperty('--accent-color', '#00bfff');
-      root.style.setProperty('--accent-hover', '#0077cc');
-      root.style.setProperty('--header-bg', '#e0e0e0');
-      root.style.setProperty('--box-shadow', '#00bfff33');
-      root.style.setProperty('--border-color', '#00bfff33');
-      root.style.setProperty('--success-color', '#008f5a');
-      root.style.setProperty('--danger-color', '#cc0033');
-      root.style.setProperty('--footer-color', '#333');
-      isLight = true;
-    } else {
-      root.style = ""; // يرجع للألوان الافتراضية من CSS
-      isLight = false;
+      if (!isLight) {
+        root.style.setProperty('--bg-color', '#ffffff');
+        root.style.setProperty('--card-bg', '#f0f0f0');
+        root.style.setProperty('--text-color', '#000000');
+        root.style.setProperty('--accent-color', '#00bfff');
+        root.style.setProperty('--accent-hover', '#0077cc');
+        root.style.setProperty('--header-bg', '#e0e0e0');
+        root.style.setProperty('--box-shadow', '#00bfff33');
+        root.style.setProperty('--border-color', '#00bfff33');
+        root.style.setProperty('--success-color', '#008f5a');
+        root.style.setProperty('--danger-color', '#cc0033');
+        root.style.setProperty('--footer-color', '#333');
+        isLight = true;
+      } else {
+        root.style = ""; // يرجع للألوان الافتراضية من CSS
+        isLight = false;
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
 
