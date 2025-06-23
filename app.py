@@ -1,5 +1,7 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect,url_for, flash
 from flask_mail import Mail, Message
+import smtplib 
+from email.message import EmailMessage
 
 app = Flask(__name__)
 app.secret_key = "your-secret-key"
@@ -48,10 +50,10 @@ def send_email():
 
     try:
         mail.send(msg)
-        flash("✅ Message sent successfully!", "success")
+        flash(" Message sent successfully!", "success")
     except Exception as e:
-        print("❌ Email send failed:", e)  # ← هذا مهم جداً لكشف الخطأ
-        flash(f"❌ An error occurred: {str(e)}", "danger")
+        print(" Email send failed:", e)  # ← هذا مهم جداً لكشف الخطأ
+        flash(f" An error occurred: {str(e)}", "danger")
 
     return redirect("/")
 
