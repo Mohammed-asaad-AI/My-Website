@@ -32,6 +32,18 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+  <div class="custom-flash" style="display: none; opacity: 0; transition: opacity 1s ease; 
+          background-color: {% if category == 'success' %}#0f08{% else %}#f448{% endif %};
+          color: white; padding: 15px; border-radius: 8px; max-width: 600px; margin: 20px auto; text-align: center;">
+    {{ message }}
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+
   <section class="hero" id="about">
     <img src="{{ url_for('static', filename='assets/images/profile.jpg') }}" alt="Profile" class="profile-img" />
 
@@ -172,23 +184,7 @@
       <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
       <button type="submit" class="cyber-btn">Send Message</button>
     </form>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-    {% for category, message in messages %}
-    <div class="custom-flash" style="display: none; opacity: 0;
-                  color: {% if category == 'success' %}#00ff88{% else %}#ff5555{% endif %};
-                  background-color: #001f3f;
-                  padding: 12px;
-                  border-radius: 8px;
-                  max-width: 500px;
-                  margin: 10px auto;
-                  text-align: center;
-                  box-shadow: 0 0 10px #00ffff44;">
-      {% if category == 'success' %}✅{% else %}❌{% endif %} {{ message }}
-    </div>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
+
 
 
 
@@ -269,20 +265,21 @@
   </script>
 
 
-
-  <script>
-    // إخفاء الرسائل بعد 5 ثوانٍ
-    setTimeout(() => {
-      const flashMessages = document.querySelectorAll("p");
-      flashMessages.forEach(msg => {
-        if (msg.textContent.includes("Message sent") || msg.textContent.includes("An error occurred")) {
-          msg.style.transition = "opacity 0.8s ease";
-          msg.style.opacity = 0;
-          setTimeout(() => msg.remove(), 1000); // يزيل العنصر نهائيًا بعد التلاشي
-        }
-      });
-    }, 5000); // بعد 5 ثوانٍ
-  </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const flashes = document.querySelectorAll(".custom-flash");
+    flashes.forEach((flash) => {
+      flash.style.display = "block";
+      setTimeout(() => {
+        flash.style.opacity = "1";
+      }, 100);
+      setTimeout(() => {
+        flash.style.opacity = "0";
+        setTimeout(() => { flash.remove(); }, 1000);
+      }, 5000); // ← مدة الظهور
+    });
+  });
+</script>
 
 
   <script>
@@ -292,7 +289,7 @@
     });
   </script>
 
-<script src="{{ url_for('static', filename='assets/js/flash.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/flash.js') }}"></script>
 
 </body>
 
