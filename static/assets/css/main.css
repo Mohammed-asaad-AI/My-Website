@@ -15,21 +15,6 @@
   --footer-color: #ccc;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-color: #ffffff;
-    --card-bg: #f0f0f0;
-    --text-color: #000000;
-    --accent-color: #00bfff;
-    --accent-hover: #0077cc;
-    --header-bg: #e0e0e0;
-    --box-shadow: #00bfff33;
-    --border-color: #00bfff33;
-    --success-color: #008f5a;
-    --danger-color: #cc0033;
-    --footer-color: #333;
-  }
-}
 
 /* Base font */
 * {

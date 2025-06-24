@@ -303,30 +303,40 @@
   <script src="{{ url_for('static', filename='assets/js/flash.js') }}"></script>
 
   <script>
-    let isLight = false;
-
-    function toggleTheme() {
-      const root = document.documentElement;
-
-      if (!isLight) {
-        root.style.setProperty('--bg-color', '#ffffff');
-        root.style.setProperty('--card-bg', '#f0f0f0');
-        root.style.setProperty('--text-color', '#000000');
-        root.style.setProperty('--accent-color', '#00bfff');
-        root.style.setProperty('--accent-hover', '#0077cc');
-        root.style.setProperty('--header-bg', '#e0e0e0');
-        root.style.setProperty('--box-shadow', '#00bfff33');
-        root.style.setProperty('--border-color', '#00bfff33');
-        root.style.setProperty('--success-color', '#008f5a');
-        root.style.setProperty('--danger-color', '#cc0033');
-        root.style.setProperty('--footer-color', '#333');
-        isLight = true;
-      } else {
-        root.style = ""; // يرجع للألوان الافتراضية من CSS
-        isLight = false;
-      }
+  function applyTheme(light) {
+    const root = document.documentElement;
+    if (light) {
+      root.style.setProperty('--bg-color', '#ffffff');
+      root.style.setProperty('--card-bg', '#f0f0f0');
+      root.style.setProperty('--text-color', '#000000');
+      root.style.setProperty('--accent-color', '#00bfff');
+      root.style.setProperty('--accent-hover', '#0077cc');
+      root.style.setProperty('--header-bg', '#e0e0e0');
+      root.style.setProperty('--box-shadow', '#00bfff33');
+      root.style.setProperty('--border-color', '#00bfff33');
+      root.style.setProperty('--success-color', '#008f5a');
+      root.style.setProperty('--danger-color', '#cc0033');
+      root.style.setProperty('--footer-color', '#333');
+    } else {
+      root.style = "";
     }
-  </script>
+    localStorage.setItem("theme", light ? "light" : "dark");
+  }
+
+  function toggleTheme() {
+    const current = localStorage.getItem("theme");
+    const isLight = current === "light";
+    applyTheme(!isLight);
+  }
+
+  // Apply saved theme on load
+  window.addEventListener("DOMContentLoaded", () => {
+    const current = localStorage.getItem("theme");
+    if (current === "light") {
+      applyTheme(true);
+    }
+  });
+</script>
 
 </body>
 
